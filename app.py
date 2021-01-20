@@ -479,7 +479,7 @@ class PageToRSS(object):
 			except :
 				traceback.print_exc()
 
-			time.sleep(30)
+			time.sleep(300)
 
 
 
