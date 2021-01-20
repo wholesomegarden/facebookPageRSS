@@ -27,7 +27,7 @@ from pprint import pprint
 # from ServiceLoader import *
 # from MasterService import *
 
-runLocal = True
+runLocal = False
 permalinks = {}
 
 from scraper import *
@@ -479,7 +479,7 @@ class PageToRSS(object):
 			except :
 				traceback.print_exc()
 
-			time.sleep(300)
+			time.sleep(30)
 
 
 

@@ -7,7 +7,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from bs4 import BeautifulSoup as bs
 
-from webwhatsapi import WhatsAPIDriver
+# from webwhatsapi import WhatsAPIDriver
 
 mybrowser = None
 
