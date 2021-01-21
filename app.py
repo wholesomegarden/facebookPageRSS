@@ -439,21 +439,27 @@ class PageToRSS(object):
 				driver = self.driver
 				# driver.get("https://facebook.com")
 				self._login(driver,EMAIL,PASSWORD)
-
-				print(driver.find_element_by_tag_name("body").text)
+				try:
+					print(driver.find_element_by_tag_name("body").text)
+				except:
+					print (" NO BODY ")
 
 
 				driver.get(self.page)
 
-				print(driver.find_element_by_tag_name("body").text)
+				# print(driver.find_element_by_tag_name("body").text)
+				try:
+					print(driver.find_element_by_tag_name("body").text)
+				except:
+					print (" NO BODY ")
 
 				# wait up to 10 seconds for the elements to become available
 				driver.implicitly_wait(10)
 				# Now that the page is fully scrolled, grab the source code.
-				source_data = driver.page_source
+				# source_data = driver.page_source
 
 				# Throw your source into BeautifulSoup and start parsing!
-				bs_data = bs(source_data, 'html.parser')
+				# bs_data = bs(source_data, 'html.parser')
 				# print(source_data)
 
 				time.sleep(1.5)
