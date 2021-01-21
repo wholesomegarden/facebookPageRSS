@@ -377,7 +377,7 @@ class PageToRSS(object):
 		print(browser.find_element_by_tag_name("body").text)
 		print(".............")
 		time.sleep(1)
-		if True:#try:
+		try:
 			browser.find_element_by_name("email").send_keys(email)
 			time.sleep(1)
 			browser.find_element_by_name("pass").send_keys(password)
@@ -387,15 +387,15 @@ class PageToRSS(object):
 			login.click()
 			time.sleep(5)
 
-		browser.implicitly_wait(10)
-		print(".............")
-		print(browser.find_element_by_tag_name("body").text)
-		print(".............")
+			browser.implicitly_wait(10)
+			print(".............")
+			print(browser.find_element_by_tag_name("body").text)
+			print(".............")
 
-		# except :
-		# 	traceback.print_exc()
-		# 	pass
-		# time.sleep(5)
+		except :
+			traceback.print_exc()
+			pass
+		time.sleep(5)
 
 	# def loop()
 
