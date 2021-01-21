@@ -1,14 +1,6 @@
-2021/01/21-02:03:34.252 77af Reusing MANIFEST /home/magic/wholesomegarden/facebookPageRSS/app/session/rprofile2/Profile 1/Local Storage/leveldb/MANIFEST-000001
-2021/01/21-02:03:34.255 77af Recovering log #17
-2021/01/21-02:03:34.256 77af Level-0 table #19: started
-2021/01/21-02:03:34.261 77af Level-0 table #19: 21440 bytes OK
-2021/01/21-02:03:34.264 77af Delete type=0 #17
-2021/01/21-02:03:34.265 77b3 Compacting 4@0 + 1@1 files
-2021/01/21-02:03:34.274 77b3 Generated table #21@0: 233 keys, 30444 bytes
-2021/01/21-02:03:34.275 77b3 Compacted 4@0 + 1@1 files => 30444 bytes
-2021/01/21-02:03:34.276 77b3 compacted to: files[ 0 1 1 0 0 0 0 ]
-2021/01/21-02:03:34.277 77b3 Delete type=2 #8
-2021/01/21-02:03:34.277 77b3 Delete type=2 #10
-2021/01/21-02:03:34.277 77b3 Delete type=2 #19
-2021/01/21-02:03:34.277 77b3 Delete type=2 #16
-2021/01/21-02:03:34.277 77b3 Delete type=2 #14
+2021/01/21-18:19:14.460 6a23 Reusing MANIFEST /home/magic/wholesomegarden/facebookPageRSS/app/session/rprofile2/Profile 1/Local Storage/leveldb/MANIFEST-000001
+2021/01/21-18:19:14.461 6a23 Recovering log #20
+2021/01/21-18:19:14.461 6a23 Reusing old log /home/magic/wholesomegarden/facebookPageRSS/app/session/rprofile2/Profile 1/Local Storage/leveldb/000020.log 
+2021/01/21-18:19:22.415 6a23 Level-0 table #24: started
+2021/01/21-18:19:22.480 6a23 Level-0 table #24: 23571 bytes OK
+2021/01/21-18:19:22.483 6a23 Delete type=0 #20

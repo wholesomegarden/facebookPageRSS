@@ -27,7 +27,7 @@ from pprint import pprint
 # from ServiceLoader import *
 # from MasterService import *
 
-runLocal = False
+runLocal = True
 permalinks = {}
 
 from scraper import *
@@ -310,7 +310,7 @@ class PageToRSS(object):
 						print("~~~~~~~~~~~~~~~~")
 						if x.text is not "" and "… See More" not in x.text:
 							author = x.text.split("\n")[0]
-							post = "\n".join(x.text.split(" Comments")[0].split("·")[1:])
+							post = "\n".join(x.text.split(" Comment")[0].split("·")[1:])
 							post = "\n".join(post.split("\n")[:-3])
 							urls = self.getURLS(post)
 							for url in urls:
@@ -424,7 +424,7 @@ class PageToRSS(object):
 		chrome_options.binary_location = binPath
 		# chrome_options.add_argument('incognito')
 		# chrome_options.add_argument('headless')
-		chrome_options.add_argument("--headless")
+		# chrome_options.add_argument("--headless")
 		chrome_options.add_argument("--disable-dev-shm-usage")
 		chrome_options.add_argument("--no-sandbox")
 		chrome_options.add_argument("--window-size=1420,3600")
@@ -495,6 +495,7 @@ class PageToRSS(object):
 					print(permalinks[perma])
 					print("================================")
 
+				# time.sleep()
 				driver.close()
 				print("DONE")
 				print("DONE")
