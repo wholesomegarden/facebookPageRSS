@@ -1,3 +1,5 @@
-2021/01/20-23:33:20.742 60c Reusing MANIFEST /home/magic/wholesomegarden/facebookPageRSS/app/session/rprofile2/Default/Local Storage/leveldb/MANIFEST-000001
-2021/01/20-23:33:20.743 60c Recovering log #24
-2021/01/20-23:33:20.743 60c Reusing old log /home/magic/wholesomegarden/facebookPageRSS/app/session/rprofile2/Default/Local Storage/leveldb/000024.log 
+2021/01/21-15:34:51.677 347e Reusing MANIFEST /home/magic/wholesomegarden/facebookPageRSS/app/session/rprofile2/Default/Local Storage/leveldb/MANIFEST-000001
+2021/01/21-15:34:51.677 347e Recovering log #33
+2021/01/21-15:34:51.677 347e Level-0 table #36: started
+2021/01/21-15:34:51.739 347e Level-0 table #36: 15531 bytes OK
+2021/01/21-15:34:51.745 347e Delete type=0 #33
