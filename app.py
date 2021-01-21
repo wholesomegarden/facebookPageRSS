@@ -27,7 +27,7 @@ from pprint import pprint
 # from ServiceLoader import *
 # from MasterService import *
 
-runLocal = True
+runLocal = False
 permalinks = {}
 
 from scraper import *
