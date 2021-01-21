@@ -302,31 +302,35 @@ class PageToRSS(object):
 			for h in hrefs:
 				find = page + "/permalink/"
 				if find in h.get_attribute("href"):
-						link = h.get_attribute("href").split("?")[0]
-						if link not in permalinks:
-							x = h.find_element_by_xpath("./../../../../../../../../../../../../../../..")
-							if x.text is not "" and "… See More" not in x.text:
-								author = x.text.split("\n")[0]
-								post = x.text.split("· See original")[0].split("·")[-1]
-								urls = self.getURLS(post)
-								for url in urls:
-									if "..." in url:
-										urlelement = x.find_element_by_xpath("//a[text()='"+url+"']")
-										# actionChains.move_to_element(urlelement)
-										# urlelement.send_keys(Keys.TAB)
+					link = h.get_attribute("href").split("?")[0]
+					if link not in permalinks:
+						x = h.find_element_by_xpath("./../../../../../../../../../../../../../../..")
+						print("~~~~~~~~~~~~~~~~")
+						print(x.text)
+						print("~~~~~~~~~~~~~~~~")
+						if x.text is not "" and "… See More" not in x.text:
+							author = x.text.split("\n")[0]
+							post = x.text.split(" Comments")[0].split("·")[-1]
+							post = "\n".join(post.split("\n")[:-3])
+							urls = self.getURLS(post)
+							for url in urls:
+								if "..." in url:
+									urlelement = x.find_element_by_xpath("//a[text()='"+url+"']")
+									# actionChains.move_to_element(urlelement)
+									# urlelement.send_keys(Keys.TAB)
 
-										# time.sleep(1)
-										# urlelement = x.find_element_by_xpath("//a[text()='"+url+"']")
-										print("#################")
-										# for element in urlelement:
-										realurl = urlelement.get_attribute("href")
-										realurl = realurl.split("https://l.facebook.com/l.php?u=")[1].split("&h=")[0].replace("%3A",":").replace("%2F","/").replace("%3F","?").replace("%3D","=").split("?fbclid")[0]
-										# if
-										print("...................")
-										print(url)
-										print(realurl)
-										post = post.replace(url,realurl)
-								permalinks[link]={"author":author, "post":post}
+									# time.sleep(1)
+									# urlelement = x.find_element_by_xpath("//a[text()='"+url+"']")
+									print("#################")
+									# for element in urlelement:
+									realurl = urlelement.get_attribute("href")
+									realurl = realurl.split("https://l.facebook.com/l.php?u=")[1].split("&h=")[0].replace("%3A",":").replace("%2F","/").replace("%3F","?").replace("%3D","=").split("?fbclid")[0]
+									# if
+									print("...................")
+									print(url)
+									print(realurl)
+									post = post.replace(url,realurl)
+							permalinks[link]={"author":author, "post":post}
 
 			# wait for the browser to load, this time can be changed slightly ~3 seconds with no difference, but 5 seems
 			# to be stable enough
