@@ -310,7 +310,7 @@ class PageToRSS(object):
 						print("~~~~~~~~~~~~~~~~")
 						if x.text is not "" and "… See More" not in x.text:
 							author = x.text.split("\n")[0]
-							post = x.text.split(" Comments")[0].split("·")[:-1]
+							post = x.text.split(" Comments")[0].split("·")[1:]
 							post = "\n".join(post.split("\n")[:-3])
 							urls = self.getURLS(post)
 							for url in urls:
