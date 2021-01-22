@@ -449,7 +449,7 @@ class PageToRSS(object):
 		chrome_options.binary_location = binPath
 		# chrome_options.add_argument('incognito')
 		# chrome_options.add_argument('headless')
-		# chrome_options.add_argument("--headless")
+		chrome_options.add_argument("--headless")
 		chrome_options.add_argument("--disable-dev-shm-usage")
 		chrome_options.add_argument("--no-sandbox")
 		chrome_options.add_argument("--window-size=1420,3600")
