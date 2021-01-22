@@ -310,8 +310,9 @@ class PageToRSS(object):
 						print("~~~~~~~~~~~~~~~~")
 						if x.text is not "" and "… See More" not in x.text:
 							author = x.text.split("\n")[0]
-							post = "\n".join(x.text.split(" Comment")[0].split("·")[1:])
-							post = "\n".join(post.split("\n")[:-3])
+							post = x.text
+							# post = "\n".join(x.text.split(" Comment")[0].split("·")[1:])
+							# post = "\n".join(post.split("\n")[:-3])
 							urls = self.getURLS(post)
 							for url in urls:
 								if "..." in url:
@@ -501,7 +502,7 @@ class PageToRSS(object):
 				print("DONE")
 				print("DONE")
 				print("DONE")
-				print("DONE", time.time()-start)
+				print("DONE", time.time()-start, len(permalinks), list(permalinks.keys()))
 			except :
 				traceback.print_exc()
 
