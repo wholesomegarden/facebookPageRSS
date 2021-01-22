@@ -117,7 +117,8 @@ class PageToRSS(object):
 	# 	"groups": {"id":"service"},
 	# 	"id":"972547932000-1610379075@g.us"}
 	driver = None
-	page = "https://www.facebook.com/groups/supertool"
+	# page = "https://www.facebook.com/groups/supertool"
+	page = "https://www.facebook.com/groups/testgroup02"
 
 	def __init__(self):
 		PageToRSS.share = self
