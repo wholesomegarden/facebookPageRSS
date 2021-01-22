@@ -27,7 +27,7 @@ from pprint import pprint
 # from ServiceLoader import *
 # from MasterService import *
 
-runLocal = False
+runLocal = True
 permalinks = {}
 
 from scraper import *
@@ -274,6 +274,29 @@ class PageToRSS(object):
 		lastCount = -1
 		match = False
 
+		try: #sort
+			sort = driver.find_elements_by_xpath("//span[text()='New Activity']")
+			for s in sort:
+				try: #sort
+					print("NEW Activity")
+					driver.execute_script("arguments[0].click();", s)
+					time.sleep(1)
+					print("NEW Activity")
+					try:
+						print("RECENT POSTS")
+						recent = driver.find_element_by_xpath("//span[text()='Recent Posts']")
+						# for r in recent:
+						driver.execute_script("arguments[0].click();", recent)
+						print("RECENT POSTS")
+						time.sleep(3)
+					except:
+							traceback.print_exc()
+				except:
+					traceback.print_exc()
+
+		except:
+			traceback.print_exc()
+
 		while not match:
 			if infinite_scroll:
 				lastCount = lenOfPage
@@ -426,7 +449,7 @@ class PageToRSS(object):
 		chrome_options.binary_location = binPath
 		# chrome_options.add_argument('incognito')
 		# chrome_options.add_argument('headless')
-		chrome_options.add_argument("--headless")
+		# chrome_options.add_argument("--headless")
 		chrome_options.add_argument("--disable-dev-shm-usage")
 		chrome_options.add_argument("--no-sandbox")
 		chrome_options.add_argument("--window-size=1420,3600")
@@ -455,7 +478,8 @@ class PageToRSS(object):
 
 				driver = self.driver
 				# driver.get("https://facebook.com")
-				self._login(driver,EMAIL,PASSWORD)
+				if not runLocal:
+					self._login(driver,EMAIL,PASSWORD)
 				try:
 					print(driver.find_element_by_tag_name("body").text)
 				except:
